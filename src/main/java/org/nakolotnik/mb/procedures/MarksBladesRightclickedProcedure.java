@@ -65,7 +65,7 @@ public class MarksBladesRightclickedProcedure {
                     // Генерация частиц в виде круга вокруг игрока
                     world.addParticle(ParticleTypes.FLAME,
                             player.getX() + xOffset,
-                            player.getY() + 0.2f, // Немного выше игрока
+                            player.getY() + 0.2f, // Немного выше земли
                             player.getZ() + zOffset,
                             0, 0, 0);
                 }
