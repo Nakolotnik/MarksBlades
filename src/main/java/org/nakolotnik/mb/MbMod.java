@@ -30,17 +30,15 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.AbstractMap;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(MbMod.MODID)
 public class MbMod {
     public static final String MODID = "mb";
 
     public MbMod() {
-        // Start of user code block mod constructor
-        // End of user code block mod constructor
+
         MinecraftForge.EVENT_BUS.register(this);
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-//
+
         MbModItems.REGISTRY.register(bus);
 
         MbModTabs.REGISTRY.register(bus);
