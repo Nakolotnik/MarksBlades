@@ -1,0 +1,110 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "builtin/entity",
+  "texture_size": [
+    32,
+    32
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "translation": [
+        -0.5,
+        -5.75,
+        2.75
+      ]
+    },
+    "thirdperson_lefthand": {
+      "translation": [
+        0.5,
+        -5.75,
+        2.75
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        -5,
+        5,
+        0
+      ],
+      "translation": [
+        9,
+        -16,
+        -3
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -5,
+        5,
+        0
+      ],
+      "translation": [
+        9,
+        -16,
+        -3
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        3.25,
+        0
+      ],
+      "scale": [
+        0.37,
+        0.37,
+        0.37
+      ]
+    },
+    "gui": {
+      "rotation": [
+        -90,
+        -46.25,
+        -90
+      ],
+      "translation": [
+        -2.25,
+        -2.5,
+        0
+      ],
+      "scale": [
+        0.46,
+        0.46,
+        0.46
+      ]
+    },
+    "head": {
+      "rotation": [
+        -39,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        6.5,
+        -5
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        -90,
+        40,
+        90
+      ],
+      "translation": [
+        4.25,
+        -2.75,
+        -0.25
+      ],
+      "scale": [
+        0.69,
+        0.69,
+        0.69
+      ]
+    }
+  },
+  "textures": {
+    "layer0": "mb:item/2blades",
+    "particle": "item/2blades"
+  }
+}
