@@ -1,7 +1,6 @@
 package org.nakolotnik.mb.item;
 
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
@@ -20,6 +19,7 @@ import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
+
 import java.util.function.Consumer;
 
 public class MarksBladesGeoItem extends SwordItem implements GeoItem {
@@ -108,6 +108,13 @@ public class MarksBladesGeoItem extends SwordItem implements GeoItem {
         data.add(idleController);
     }
 
+
+    @Override
+    public void onCraftedBy(ItemStack stack, Level world, Player player) {
+        super.onCraftedBy(stack, world, player);
+        stack.getOrCreateTag().putInt("CustomModelData", 2); // Стандартная текстура (2blades)
+    }
+
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.cache;
@@ -120,6 +127,16 @@ public class MarksBladesGeoItem extends SwordItem implements GeoItem {
             ItemStack mainHandItem = player.getMainHandItem();
             ItemStack offHandItem = player.getOffhandItem();
 
+            if (mainHandItem != stack && offHandItem != stack) {
+                stack.getOrCreateTag().putInt("CustomModelData", 2);
+            }
+            else if (mainHandItem == stack && offHandItem.isEmpty()) {
+                stack.getOrCreateTag().putInt("CustomModelData", 2);
+            }
+            else if (mainHandItem == stack && offHandItem == stack) {
+                stack.getOrCreateTag().putInt("CustomModelData", 1);
+            }
+
             if (mainHandItem.getItem() == this) {
                 if (offHandItem.isEmpty()) {
                     player.setItemInHand(InteractionHand.OFF_HAND, stack);
@@ -131,7 +148,8 @@ public class MarksBladesGeoItem extends SwordItem implements GeoItem {
             }
         }
     }
-private static final int COOLDOWN = 600;
+
+    private static final int COOLDOWN = 600;
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {

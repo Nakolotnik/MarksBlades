@@ -1,0 +1,19 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "mb:displaysettings/marksblades",
+    "textures": {
+      "0": "mb:item/blade"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "mb:item/1blade"
+      },
+      "gui_light": "front"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "mb:custom/marks_blades",
+  "textures": {
+    "1": "mb:item/blade",
+    "particle": "minecraft:item/blade"
+  }
+}

@@ -36,7 +36,6 @@ public class MarksBladesRightclickedProcedure {
         vampireEffectMap.put(player, currentTime + 20000);
         particleEffectStartTime.put(player, currentTime);
 
-        // Воспроизведение звука
         if (!world.isClientSide()) {
             world.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.FIRE_AMBIENT, SoundSource.PLAYERS, 1.0F, 1.0F);
         }
@@ -50,22 +49,18 @@ public class MarksBladesRightclickedProcedure {
             Level world = player.level();
             Long effectStartTime = particleEffectStartTime.get(player);
             if (effectStartTime != null && System.currentTimeMillis() < effectStartTime + 20000) {
-                // Количество частиц
                 int particleCount = 20;
-                double radius = 1.5; // Радиус круга
+                double radius = 1.5;
 
                 for (int i = 0; i < particleCount; i++) {
-                    // Расчет угла для каждой частицы (равномерно распределяем по кругу)
                     double angle = 2 * Math.PI * i / particleCount;
 
-                    // Координаты частиц в круге
                     double xOffset = Math.cos(angle) * radius;
                     double zOffset = Math.sin(angle) * radius;
 
-                    // Генерация частиц в виде круга вокруг игрока
                     world.addParticle(ParticleTypes.FLAME,
                             player.getX() + xOffset,
-                            player.getY() + 0.2f, // Немного выше игрока
+                            player.getY() + 0.2f,
                             player.getZ() + zOffset,
                             0, 0, 0);
                 }
@@ -80,7 +75,7 @@ public class MarksBladesRightclickedProcedure {
             Long effectEndTime = vampireEffectMap.get(player);
             if (effectEndTime != null && System.currentTimeMillis() < effectEndTime) {
                 LivingEntity target = event.getEntity();
-                float healAmount = event.getAmount() * 1.2f;
+                float healAmount = event.getAmount() * 0.6f;
                 player.heal(healAmount);
             }
         }

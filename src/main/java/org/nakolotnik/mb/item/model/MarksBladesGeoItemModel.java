@@ -21,4 +21,7 @@ public class MarksBladesGeoItemModel extends GeoModel<MarksBladesGeoItem> {
     public ResourceLocation getTextureResource(MarksBladesGeoItem animatable) {
         return new ResourceLocation("mb", "textures/item/blade.png");
     }
+
+
+
 }

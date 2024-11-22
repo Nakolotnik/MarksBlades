@@ -1,19 +1,16 @@
 {
-  "loader": "forge:separate_transforms",
-  "gui_light": "front",
-  "base": {
-    "parent": "mb:displaysettings/marksblades",
-    "textures": {
-      "0": "mb:item/blade"
-    }
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "mb:item/2blades"
   },
-  "perspectives": {
-    "gui": {
-      "parent": "item/generated",
-      "textures": {
-        "layer0": "mb:item/2blades"
-      },
-      "gui_light": "front"
+  "overrides": [
+    {
+      "predicate": { "custom_model_data": 1 },
+      "model": "mb:item/marks_blades_geo_1_blade"
+    },
+    {
+      "predicate": { "custom_model_data": 2 },
+      "model": "mb:item/marks_blades_geo_2_blades"
     }
-  }
+  ]
 }
